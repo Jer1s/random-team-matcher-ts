@@ -30,3 +30,4 @@ git clone `your-repository`
 cd `your-repository`
 yarn
 ```
+.
