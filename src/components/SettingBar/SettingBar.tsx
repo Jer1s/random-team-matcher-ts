@@ -12,6 +12,16 @@ const SettingBar = ({ settingOptions, setSettingOptions }: IProps) => {
 
   const handleCounter = (type: '+' | '-') => {
     const add = type === '+' ? 1 : -1;
+    const changeOptionId = 'team';
+    const newOptions = settingOptions.map((option) => {
+      if (option.id === changeOptionId) {
+        const { value: prevValue, ...res } = option;
+        return { ...res, value: prevValue + add };
+      } else {
+        return option;
+      }
+    });
+    setSettingOptions(newOptions);
   };
 
   return (
